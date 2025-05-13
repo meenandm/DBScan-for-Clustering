@@ -13,7 +13,7 @@ This project provides a simple implementation of a density-based clustering algo
 
 2. **Recursive Cluster Expansion**:
    - Expands clusters by recursively adding neighbors of seed points that meet the density criteria.
-   - Enter estimated dc from elbow (e.g., 10): 5
+   - Enter estimated dc from elbow (e.g., 10): 2
    - Estimating densities from sampled points...
      Suggested `rhoc` at 70th percentile: 4.00
      Suggested `rhoc` at 80th percentile: 4.00
