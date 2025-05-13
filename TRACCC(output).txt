@@ -1,0 +1,144 @@
+meenandm@PK bin % ./traccc_seq_example --use-acts-geom-source=1 --input-directory=ttbar_mu100_strips --input-events=10 --detector-file=tml_detector/trackml-detector.csv --digitization-file=tml_detector/default-geometric-config-generic.json --use-detray-detector=0
+12:40:11    TracccExampleSeqCpuOptions    INFO      
+12:40:11    TracccExampleSeqCpuOptions    INFO      Running Full Tracking Chain on the Host
+12:40:11    TracccExampleSeqCpuOptions    INFO      
+12:40:11    TracccExampleSeqCpuOptions    INFO      Detector Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Detector file:                          tml_detector/trackml-detector.csv
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Material file:                          geometries/odd/odd-detray_material_detray.json
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Surface grid file:                      geometries/odd/odd-detray_surface_grids_detray.json
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Use detray detector:                    false
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Digitization file:                      tml_detector/default-geometric-config-generic.json
+12:40:11    TracccExampleSeqCpuOptions    INFO      Input Data Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Use ACTS geometry source:               true
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Input data format:                      csv
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Input directory:                        ttbar_mu100_strips
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Number of input events:                 10
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Number of skipped events:               0
+12:40:11    TracccExampleSeqCpuOptions    INFO      Output Data Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Output data format:                     csv
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Output directory:                       
+12:40:11    TracccExampleSeqCpuOptions    INFO      Clusterization Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Threads per partition:                  256
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Target cells per thread:                8
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max cells per thread:                   16
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Scratch space multiplier:               256
+12:40:11    TracccExampleSeqCpuOptions    INFO      Track Seeding Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      Track Finding Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max branches per seed:                  10
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max branches at surface:                10
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Track candidate range:                  3:100
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Min step length to next surface:        1.200000 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max step count to next surface:         100
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max Chi2:                               10.000000
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Max holes per candidate:                3
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ PDG number:                             13
+12:40:11    TracccExampleSeqCpuOptions    INFO      Track Fitting Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Number of iterations:                   1
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Particle hypothesis PDG:                13
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Covariance inflation factor:            1000.000000
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Barcode sequence size factor:           5
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Minimum capacity of barcode sequence:   100
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Mask tolerance for the backward filter: 5.000000
+12:40:11    TracccExampleSeqCpuOptions    INFO      Track Propagation Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Navigation:
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Min mask tolerance:                   0.000010 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Max mask tolerance:                   3.000000 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Mask tolerance scalar:                0.050000
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Path tolerance:                       1.000000 um
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Overstep tolerance:                   -999.999939 um
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ └ Search window:                        0 x 0
+12:40:11    TracccExampleSeqCpuOptions    INFO      ├ Transport:
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Min step size:                        0.000100 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Runge-Kutta tolerance:                0.000100 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Max step updates:                     10000
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Step size constraint:                 340282346638528859811704183484516925440.000000 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Path limit:                           5.000000 m
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Min step size:                        0.000100 mm
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Enable Bethe energy loss:             true
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ ├ Enable covariance transport:          true
+12:40:11    TracccExampleSeqCpuOptions    INFO      │ └ Covariance transport:
+12:40:11    TracccExampleSeqCpuOptions    INFO      │   ├ Enable energy loss gradient:        false
+12:40:11    TracccExampleSeqCpuOptions    INFO      │   └ Enable B-field gradient:            false
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Geometry context:
+12:40:11    TracccExampleSeqCpuOptions    INFO      Track Ambiguity Resolution Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Run ambiguity resolution:               true
+12:40:11    TracccExampleSeqCpuOptions    INFO      Performance Measurement Options:
+12:40:11    TracccExampleSeqCpuOptions    INFO      └ Run performance checks:                 false
+12:40:11    TracccExampleSeqCpuOptions    INFO      
+Warning in <TROOT::Append>: Replacing existing TH1: ndf (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2 (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: reduced_chi2 (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_1D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_1D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_1D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_1D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_2D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_2D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_2D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_2D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: ndf (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2 (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: reduced_chi2 (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_1D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_1D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_1D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_1D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_2D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: chi2_2D_smoothed (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_2D_filtered (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: pval_2D_smoothed (Potential memory leak).
+12:40:12    TracccExampleSeqCpu           WARNING   33 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000000-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   23 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000001-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   16 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000002-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   21 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000003-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   23 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000004-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   20 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000005-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   20 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000006-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   8 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000007-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   13 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000008-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+12:40:12    TracccExampleSeqCpu           WARNING   19 duplicate cells found in /Users/meenandm/Documents/traccc/data/ttbar_mu100_strips/event000000009-cells.csv
+12:40:12    AmbiguityResolutionAlg        ERROR     No measurements.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 1/2: every removed track had at least one common measurement with another track.
+12:40:12    AmbiguityResolutionAlg        INFO      OK 2/2: each selected_track shares at most (_config.maximum_shared_hits - 1)(=0) measurement(s)
+==> Statistics ... 
+- read     293860 cells
+- created  177084 measurements. 
+- created  0 space points. 
+- created  0 seeds
+- found    0 tracks
+- fitted   0 tracks
+- resolved 0 tracks
+==> Elapsed times...
+                    Read cells  331 ms
+                Clusterization  10 ms
+    Track ambiguity resolution  0 ms
+                     Wall time  342 ms
