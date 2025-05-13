@@ -1,0 +1,6 @@
+identifier	time_total_s	time_perevent_s
+Reader:CsvSimHitReader	23.8	2.38
+Reader:CsvParticleReader	5.055	0.5055
+Algorithm:DigitizationAlgorithm	1.016	0.1016
+Writer:CsvMeasurementWriter	11.65	1.165
+Writer:CsvMeasurementWriter:endRun	1.91e-07	1.91e-08
