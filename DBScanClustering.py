@@ -51,8 +51,8 @@ def expand_cluster(index, cluster_id, distances, densities, cluster_ids, dc, rho
 
 if __name__ == "__main__":
     local_dir = "/Users/meenandm/Documents/DBScan-for-Clustering/ttbar_mu100/"
-    dc = 10.0
-    rhoc = 5
+    dc = 2.0
+    rhoc = 4
 
     # List all CSV files in the local directory
     csv_files = glob.glob(os.path.join(local_dir, "*cells.csv"))
