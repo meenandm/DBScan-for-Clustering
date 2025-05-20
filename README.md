@@ -6,26 +6,31 @@ This project provides a simple implementation of a density-based clustering algo
 
 ## Features
 
-1. **Density-Based Clustering**:
+1. **Local To Global Transformation**:
+   - Using Trackml-detector.csv and cell files from ttbar_mu100 for transformation
+   - Parameterising Strip Cells
+   - Each Unique hit_id represents a data point within same cluster or indivual points
+
+2. **Density-Based Clustering**:
    - Clusters points based on their local density.
    - Uses a pairwise distance matrix to calculate densities.
-   - Identifies high-density points as "seeds" and expands clusters from these seeds.
+   - Identifies high-density points as "cluster" and noise points which lie for density threshold.
 
-2. **Recursive Cluster Expansion**:
-   - Expands clusters by recursively adding neighbors of seed points that meet the density criteria.
-   - Enter estimated dc from elbow (e.g., 10): 2
+3. **Recursive Cluster Expansion**:
+   - Expands clusters by recursively adding neighbors of data points that meet the density criteria.
+   - Enter estimated dc from elbow (range 45-60): 47.5
    - Estimating densities from sampled points...
-     Suggested `rhoc` at 70th percentile: 4.00
-     Suggested `rhoc` at 80th percentile: 4.00
-     Suggested `rhoc` at 90th percentile: 5.00
-     Suggested `rhoc` at 95th percentile: 6.00
+     Suggested `rhoc` at 70th percentile: 22.00
+     Suggested `rhoc` at 80th percentile: 25.00
+     Suggested `rhoc` at 90th percentile: 29.00
+     Suggested `rhoc` at 95th percentile: 32.00
 
 3. **Flexible Input**:
-   - Accepts input data in `pandas.DataFrame` format with required columns for coordinates (`x0`, `x1`, etc.) and weights (`weight`).
+   - Accepts input data in `pandas.DataFrame` format with required columns for coordinates (`x0`, `x1`, `x2` for hit and `cx`, `cy`, `cz` for detector modules.) and weights (`values`).
 
 4. **Customizable Parameters**:
    - `dc`: Distance cutoff for neighborhood calculation.
-   - `rhoc`: Minimum density threshold to identify seeds.
+   - `rhoc`: Minimum density threshold to hits/mm^2.
 
 5. **CSV Integration**:
    - Input data can be loaded from a CSV file.
