@@ -19,11 +19,11 @@ This project provides a simple implementation of a density-based clustering algo
 3. **Recursive Cluster Expansion**:
    - Expands clusters by recursively adding neighbors of data points that meet the density criteria.
    - Enter estimated dc from elbow (range 45-60): 47.5
-   - Estimating densities from sampled points...__
-     Suggested `rhoc` at 70th percentile: 22.00__
-     Suggested `rhoc` at 80th percentile: 25.00__
-     Suggested `rhoc` at 90th percentile: 29.00__
-     Suggested `rhoc` at 95th percentile: 32.00__
+   - Estimating densities from sampled points... <br />
+     Suggested `rhoc` at 70th percentile: 22.00 <br />
+     Suggested `rhoc` at 80th percentile: 25.00 <br />
+     Suggested `rhoc` at 90th percentile: 29.00 <br />
+     Suggested `rhoc` at 95th percentile: 32.00 <br />
 
 3. **Flexible Input**:
    - Accepts input data in `pandas.DataFrame` format with required columns for coordinates (`x0`, `x1`, `x2` for hit and `cx`, `cy`, `cz` for detector modules.) and weights (`values`).
