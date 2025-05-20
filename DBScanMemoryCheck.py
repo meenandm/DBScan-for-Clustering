@@ -15,7 +15,8 @@ def compute_pairwise_distances(coords):
         for j in range(n):
             dx = coords[i, 0] - coords[j, 0]
             dy = coords[i, 1] - coords[j, 1]
-            dist_matrix[i, j] = (dx ** 2 + dy ** 2) ** 0.5
+            dz = coords[i, 2] - coords[j, 2]
+            dist_matrix[i, j] = (dx**2 + dy**2 + dz**2) ** 0.5
     return dist_matrix
 
 @njit()
@@ -34,8 +35,20 @@ def expand_cluster(index, cluster_id, distances, densities, cluster_ids, dc, rho
                     queue.append(neighbor)
 
 def density_based_clustering(data, dc, rhoc):
+    """
+    Perform density-based clustering on the input data.
+
+    Parameters:
+        data (pd.DataFrame): Input data with coordinates and weights.
+            It must have columns ['channel0', 'channel1', 'value'].
+        dc (float): Distance cutoff for density calculation.
+        rhoc (float): Minimum density threshold for seeds.
+
+    Returns:
+        pd.DataFrame: Data with cluster IDs and seed information.
+    """
     n_points = len(data)
-    coords = data[['channel0', 'channel1']].to_numpy(dtype=np.float32)
+    coords = data[['x_global', 'y_global', 'z_global']].to_numpy(dtype=np.float32)
     cluster_ids = -1 * np.ones(n_points, dtype=np.int32)
 
     print("Computing distances...")
@@ -64,17 +77,17 @@ def print_memory_usage():
 
 if __name__ == "__main__":
     local_dir = "/Users/meenandm/Documents/DBScan-for-Clustering/ttbar_mu100_strips/"
-    dc = 2.0
-    rhoc = 4
+    dc = 45  # Adjust for 3D distances; e.g., 50 mm 
+    rhoc = 13  # Adjust for density; e.g., 22 hits/mm^3 from Histogram Analysis 70th percentile
 
-    csv_files = glob.glob(os.path.join(local_dir, "*cells.csv"))
+    csv_files = glob.glob(os.path.join(local_dir, "*-cells-global.csv"))
 
     for csv_file in csv_files:
         print_memory_usage()
         print(f"Processing file: {csv_file}")
         data = pd.read_csv(csv_file)
 
-        required_columns = {"geometry_id", "hit_id", "channel0", "channel1", "value"}
+        required_columns = {"geometry_id", "hit_id", "x_global", "y_global", "z_global"}
         if not required_columns.issubset(data.columns):
             print(f"Skipping {csv_file}. Missing required columns: {required_columns}")
             continue

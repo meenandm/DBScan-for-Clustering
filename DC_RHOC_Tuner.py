@@ -15,12 +15,12 @@ def load_limited_coords(files, max_points=10000):
     total_loaded = 0
     for f in files:
         try:
-            df = pd.read_csv(f, usecols=["channel0", "channel1"])
+            df = pd.read_csv(f, usecols=["x_global", "y_global", "z_global"])
         except Exception as e:
             print(f"[SKIP] {f}: {e}")
             continue
 
-        coords = df[["channel0", "channel1"]].dropna().to_numpy()
+        coords = df[["x_global", "y_global", "z_global"]].dropna().to_numpy()
         if coords.size == 0:
             continue
 
@@ -36,7 +36,7 @@ def load_limited_coords(files, max_points=10000):
         raise RuntimeError("No valid data loaded.")
     return np.vstack(all_coords)
 
-def calculate_k_distances(coords, k=3):
+def calculate_k_distances(coords, k=4):
     nbrs = NearestNeighbors(n_neighbors=k).fit(coords)
     distances, _ = nbrs.kneighbors(coords)
     return np.sort(distances[:, -1])
@@ -49,10 +49,10 @@ def estimate_densities_sampled(coords, dc, sample_size=5000):
 
 def main():
     directory = "/Users/meenandm/Documents/DBScan-for-Clustering/ttbar_mu100_strips"
-    files = glob.glob(os.path.join(directory, "*cells.csv"))
+    files = glob.glob(os.path.join(directory, "*global.csv"))  # <-- Only global coordinate files
 
     print(f"[INFO] Memory available: {get_available_memory_gb():.2f} GB")
-    print("[INFO] Loading up to 10,000 points from files...")
+    print("[INFO] Loading up to 10,000 global points from files...")
 
     try:
         coords = load_limited_coords(files, max_points=10000)
@@ -60,7 +60,7 @@ def main():
         print(str(e))
         return
 
-    print(f"[INFO] Loaded {len(coords)} coordinates for estimation.")
+    print(f"[INFO] Loaded {len(coords)} global coordinates for estimation.")
 
     # --- Step 1: Estimate dc
     print("[INFO] Generating k-distance graph to estimate dc...")
@@ -70,19 +70,19 @@ def main():
     plt.plot(k_distances)
     plt.xlabel("Points sorted by 3-NN distance")
     plt.ylabel("3-NN distance")
-    plt.title("K-distance Graph")
+    plt.title("K-distance Graph (3D)")
     plt.grid(True)
     plt.tight_layout()
     plt.show()
 
     try:
-        dc = float(input("Enter estimated dc from elbow (e.g., 10): "))
+        dc = float(input("Enter estimated dc from elbow (e.g., 50): "))
     except ValueError:
         print("[ERROR] Invalid dc input.")
         return
 
     # --- Step 2: Estimate rhoc
-    print("[INFO] Estimating densities from sampled points...")
+    print("[INFO] Estimating densities from sampled global points...")
     densities = estimate_densities_sampled(coords, dc)
 
     plt.figure(figsize=(8, 5))
